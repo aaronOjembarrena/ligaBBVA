@@ -4,6 +4,8 @@
  */
 package ligabbva.GUISdeTodos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aaron
@@ -14,11 +16,11 @@ public class GUIinsercionEmailRecuContrasena extends javax.swing.JFrame {
      * Creates new form GUIinsercionEmailRecuContrasena
      */
     
-    GUIinicioSesion copiaIni;
+    GUIinicioSesion copiaInicio;
     
     public GUIinsercionEmailRecuContrasena(GUIinicioSesion elInicio) {
         initComponents();
-        copiaIni = elInicio;
+        copiaInicio = elInicio;
     }
 
 
@@ -99,16 +101,23 @@ public class GUIinsercionEmailRecuContrasena extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
+        copiaInicio.setEnabled(true);
         dispose();
-        copiaIni.setEnabled(true);
+        copiaInicio.setEnabled(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         /*Aquí vá la llamada a la comprobacion de si está el correo en la BD. De estarlo, se
         se enviará la clave a dicho correo*/
+        
+        JOptionPane.showMessageDialog(null, "El mensaje ha sido enviado a la dirección indicada.");
+        
+        copiaInicio.setEnabled(true);
         dispose();
-        copiaIni.setVisible(true);
+        copiaInicio.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

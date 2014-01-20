@@ -11,5 +11,13 @@ package ligabbva.EndikaAvellaneda.CambiarContrasena;
 public class CambiarContrasena {
     
     
+    public boolean ComprobacionCambioContrasena(){
+      
+        boolean esCorrecta = false;
+        
+        
+        return esCorrecta;
+    }    
+    
     
 }
