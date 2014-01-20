@@ -10,7 +10,7 @@ import ligabbva.EndikaAvellaneda.Identificar.Identificar;
  *
  * @author Aaron
  */
-public class LigaBBVA {
+public class PrincipalLigaBBVA {
 
     /**
      * @param args the command line arguments
