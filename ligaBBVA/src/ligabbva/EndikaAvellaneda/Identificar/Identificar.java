@@ -18,4 +18,15 @@ public class Identificar {
         identificacionInicial.setVisible(true);
     }
     
+    public int IdentificacionUsuario(String nombreUsuario, String claveUsuario){
+        
+        int tipoUsuario = 3;
+        
+        /*Aquí se comprueba si el usuario corresponde a alguien de la base de datos,
+         en el caso de que esté se devuelve el tipo de usuario*/
+        
+        
+        
+        return tipoUsuario;
+    }
 }
