@@ -4,7 +4,7 @@
  */
 package ligabbva;
 
-import ligabbva.EndikaAvellaneda.Identificar.Identificar;
+import ligabbva.GUISdeTodos.GUIinicioSesion;
 
 /**
  *
@@ -17,6 +17,6 @@ public class PrincipalLigaBBVA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new Identificar();
+        new GUIinicioSesion().setVisible(true);
     }
 }
