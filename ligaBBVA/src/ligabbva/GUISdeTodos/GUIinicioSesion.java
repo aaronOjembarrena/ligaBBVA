@@ -149,20 +149,27 @@ public class GUIinicioSesion extends javax.swing.JFrame {
         if(tipoUsuario == 0){
             GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador();
             menuAdmin.setVisible(true);
+            
+            dispose();
         }
         else if(tipoUsuario == 1){
             GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro();
             menuArbi.setVisible(true);
+            
+            dispose();
         }
         else if(tipoUsuario == 2){
             GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente();
             menuPresid.setVisible(true);
+            
+            dispose();
         }
         else{
             JOptionPane.showMessageDialog(null, "El usuario con el par usuario/clave especificados no "
                 + "se encuentra en el sistema");
             this.setEnabled(true);
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

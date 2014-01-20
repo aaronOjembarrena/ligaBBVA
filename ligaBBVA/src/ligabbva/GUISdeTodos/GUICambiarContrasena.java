@@ -109,21 +109,22 @@ public class GUICambiarContrasena extends javax.swing.JFrame {
         /*Aquí va la comprobación de la contraseña*/
         if(!cambioContr.ComprobacionCambioContrasena()) JOptionPane.showMessageDialog(null, "La contraseña no"
                 + " es correcta.");
-        else JOptionPane.showMessageDialog(null, "La contraseña se ha cambiado correctamente.");
+        else{
+            JOptionPane.showMessageDialog(null, "La contraseña se ha cambiado correctamente.");
         
-        if(copiaTipoUsuario == 0){
-            GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador();
-            menuAdmin.setVisible(true);
+            if(copiaTipoUsuario == 0){
+                GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador();
+                menuAdmin.setVisible(true);
+            }
+            else if(copiaTipoUsuario == 1){
+                GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro();
+                menuArbi.setVisible(true);
+            }
+            else if(copiaTipoUsuario == 2){
+                GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente();
+                menuPresid.setVisible(true);
+            }
         }
-        else if(copiaTipoUsuario == 1){
-            GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro();
-            menuArbi.setVisible(true);
-        }
-        else if(copiaTipoUsuario == 2){
-            GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente();
-            menuPresid.setVisible(true);
-        }
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 //    /**
