@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class VerDatosPartido {
     
    public ArrayList CogerDatosPartido(String unPartido){
-        ArrayList datosPartido = new ArrayList(3);
+        ArrayList<String[]> datosPartido = new ArrayList(3);
         
         String[] nombresTitularesLocal = null;
         String[] nombresTitularesVisitante = null;
@@ -29,5 +29,20 @@ public class VerDatosPartido {
         
         return datosPartido;
     }
+   
+   public ArrayList CogerPartidos(){
+       
+       ArrayList<String[]> lPartidos = new ArrayList<>();
+       
+       String dato = null;
+       String[] datosPartido = null;
+       
+       /*Bucle que coge los datos de cada partido (local, golesLocal, visitante, golesVisitante)
+        y los mete en el ArrayList de Arrays de Strings. Cada Array de Strings es una linea del
+        textArea*/
+       
+       return lPartidos;
+       
+   }
     
 }
