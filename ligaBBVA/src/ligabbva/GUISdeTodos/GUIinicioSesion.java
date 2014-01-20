@@ -39,6 +39,7 @@ public class GUIinicioSesion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio de sesión");
+        setResizable(false);
 
         jLabel1.setText("Nombre de usuario: ");
 
@@ -121,12 +122,9 @@ public class GUIinicioSesion extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        this.setVisible(false);
-        
-        GUIinsercionEmailRecuContrasena insercionEmail = new GUIinsercionEmailRecuContrasena();
+        this.setEnabled(false);
+        GUIinsercionEmailRecuContrasena insercionEmail = new GUIinsercionEmailRecuContrasena(this);
         insercionEmail.setVisible(true);
-        
-        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
