@@ -4,6 +4,8 @@
  */
 package ligabbva;
 
+import ligabbva.EndikaAvellaneda.Identificar.Identificar;
+
 /**
  *
  * @author Aaron
@@ -15,6 +17,6 @@ public class LigaBBVA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        new Identificar();
     }
 }
