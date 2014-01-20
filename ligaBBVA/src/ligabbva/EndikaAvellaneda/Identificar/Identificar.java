@@ -4,7 +4,7 @@
  */
 package ligabbva.EndikaAvellaneda.Identificar;
 
-import ligabbva.EndikaAvellaneda.GUISendika.GUIinicioSesion;
+import ligabbva.GUISdeTodos.GUIinicioSesion;
 
 /**
  *
