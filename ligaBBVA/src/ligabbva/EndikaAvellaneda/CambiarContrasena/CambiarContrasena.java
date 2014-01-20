@@ -10,4 +10,6 @@ package ligabbva.EndikaAvellaneda.CambiarContrasena;
  */
 public class CambiarContrasena {
     
+    
+    
 }
