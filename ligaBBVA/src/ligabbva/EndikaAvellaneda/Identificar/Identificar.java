@@ -4,13 +4,15 @@
  */
 package ligabbva.EndikaAvellaneda.Identificar;
 
+import ligabbva.EndikaAvellaneda.GUISendika.GUIinicioSesion;
+
 /**
  *
  * @author Aaron
  */
 public class Identificar {
     
-    GUIidentificar identificacionInicial = new GUIidentificar();
+    GUIinicioSesion identificacionInicial = new GUIinicioSesion();
 
     public Identificar() {
         identificacionInicial.setVisible(true);
