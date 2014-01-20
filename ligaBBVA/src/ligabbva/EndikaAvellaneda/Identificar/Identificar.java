@@ -58,6 +58,6 @@ public class Identificar {
          }catch (Exception err) {
                 System.out.println("Error " + err.getMessage());
          }
-        return SalidaEsper;
+        return 0;
          }
 }
