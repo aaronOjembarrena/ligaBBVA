@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ligabbva.EndikaAvellaneda.Identificar;
 
 import java.sql.Connection;
@@ -9,13 +5,24 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.StringTokenizer;
-import ligabbva.GUISdeTodos.GUIinicioSesion;
-import ligabbva.GestorBD;
 
 /**
  *
- * @author Aaron
+ * @Author Endika Avellaneda
+ * 
+ * El caso de identificar funciona correctamente, con los datos de la base de datos.
+ * 
+ * Persona 1 (identificada como árbitro) --> Usuario: pepito@pepito.es
+ *                                           Contraseña: 1234
+ * 
+ * Persona 1 (identificada como árbitro) --> Usuario: pipon@pipon.es
+ *                                           Contraseña: 1234
+ * 
+ * Persona 1 (identificada como árbitro) --> Usuario: popon@popon.es
+ *                                           Contraseña: 1234
+ * 
+ * (Ya sabemos que las contraseñas no son nada seguras, XD)
+ * 
  */
 public class Identificar {
     
@@ -23,39 +30,44 @@ public class Identificar {
     
     }
     
-    public int IdentificacionUsuario(String nombreUsuario, char[] password) throws SQLException{
+    public int IdentificacionUsuario(String nombreUsuario, String password) throws SQLException{ 
+        int resultado = 4;
         
-        int resultado = 0;
-        
-        /*Aquí se comprueba si el usuario corresponde a alguien de la base de datos,
-         en el caso de que esté se devuelve el tipo de usuario*/
-        
-//        try {
-//            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-//            Connection conexion = DriverManager.getConnection("jdvc:odbc:ADSI");
-//            Statement sentencia=conexion.createStatement();
-//            conexion.setAutoCommit(false);
-//            
-//            ResultSet rs = sentencia.executeQuery("Select email, Contraseña, Tipo from Usuario");
-//            Statement sentencia2=conexion.createStatement();
-//
-//            while (rs.next()) {
-//                String email = rs.getString("email");
-//                String con= rs.getString("Contraseña");
-//                int tipo = rs.getInt("Tipo");
-//                
-////                StringTokenizer st = new StringTokenizer(email," ");
-////                String[] tabStr = new String[st.countTokens()];
-////                
-////                int i=0;
-////                while (st.hasMoreTokens())
-////                    tabStr[i++]= st.nextToken();
-////                    int SalidaEsper = rs.getInt("Tipo");
-//                    resultado = tipo;
-//         }
-//         }catch (Exception err) {
-//                System.out.println("Error " + err.getMessage());
-//         }
-        return resultado;
+        try {
+/**Abrimos la conexión a la base de datos*/
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            Connection conexion = DriverManager.getConnection("jdbc:odbc:ADSI");
+            Statement sentencia=conexion.createStatement();
+            conexion.setAutoCommit(false);
+
+/**Realizamos la consulta a la base de datos*/         
+            String consul="Select email, contrasena, Tipo from Usuario "
+                    + "where email = '"+nombreUsuario+"' and contrasena = '"+password+"'";
+           
+            ResultSet rs = sentencia.executeQuery(consul);
+/**Mientras haya elementos en la base de datos, cogemos y hacemos la comprobación oportuna
+ de qué tipo es el usuario para luego devolverlo*/
+            while (rs.next()) {
+                String email = rs.getString("email");
+                int tipo = rs.getInt("Tipo");
+                
+                if (tipo == 0){
+                    resultado = 0;
+                }
+                else if (tipo == 1){
+                    resultado = 1;
+                }
+                else{
+                    resultado = 2;
+                }
+         }
+/**Cerramos la sentencia*/            
+            sentencia.close();
+/**Cerramos la conexión a la base de datos*/
+            conexion.close();
+         }catch (Exception err) {
+                System.out.println("Error " + err.getMessage());
+         }
+    return resultado;
     }
 }

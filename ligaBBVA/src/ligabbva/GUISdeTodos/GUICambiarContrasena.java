@@ -4,13 +4,26 @@
  */
 package ligabbva.GUISdeTodos;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
-import ligabbva.EndikaAvellaneda.CambiarContrasena.CambiarContrasena;
+import ligabbva.AaronOjembarrena.CambiarContrasena.CambiarContrasena;
 
 /**
  *
- * @author Aaron
+ * @Author Aaron Ojembarrena
+ * 
+ * Comentarios: Hemos estado viendo que la consulta es correcta; ya que hemos mirado en Internet y la estrcutura indica que
+ * la estructura es esa. Si esta mal agradeceríamos que nos comunicaras en donde hemos fallado.
+ * 
+ * Pero a la hora de ejercutar el cambio, no cambia el valor en la base de datos.
+ * 
+ * No sabemos, si realmente la hemos fastidiado en la consulta (que este mal realizada y que hayamos mirado mal)
+ * o que haya algún problema con el odbc y no podamos realizar ni inserts, ni updates sobre la base de datos.
+ * 
  */
+
 public class GUICambiarContrasena extends javax.swing.JFrame {
 
     /**
@@ -119,10 +132,44 @@ public class GUICambiarContrasena extends javax.swing.JFrame {
         
         CambiarContrasena cambioContr = new CambiarContrasena();
         
-        /*Aquí va la comprobación de la contraseña*/
-        if(!cambioContr.ComprobacionCambioContrasena()) JOptionPane.showMessageDialog(null, "La contraseña no"
+        String claveOriginal = jTextField1.getText();
+        
+        System.out.println (jTextField2.getText());
+        System.out.println (jTextField3.getText());
+        
+        if(!cambioContr.ComprobacionCambioContrasena(claveOriginal)) JOptionPane.showMessageDialog(null, "La contraseña no"
                 + " es correcta.");
         else{
+            String contra1 = jTextField2.getText();
+            String contra2 = jTextField3.getText();
+            
+            String usuario = this.nombreUsuario;
+            
+            System.out.println(nombreUsuario);
+           
+            if(cambioContr.ComprobacionCambioContrasena(claveOriginal) == true && contra1.equals(contra2)){
+                try{
+/**Abrimos la conexión a la base de datos*/
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            Connection conexion = DriverManager.getConnection("jdbc:odbc:ADSI");
+            Statement sentencia=conexion.createStatement();
+            conexion.setAutoCommit(false);
+
+/**Realizamos la consulta a la base de datos*/         
+            String consul="Update Usuario set contrasena= '"+contra1+"' where email = '"+usuario+"'";
+            
+            System.out.println(consul);
+     
+/**Cerramos la sentencia*/            
+            sentencia.close();
+/**Cerramos la conexión a la base de datos*/
+            conexion.close();                    
+                }
+                catch (Exception err) {
+                System.out.println("Error " + err.getMessage());
+         }
+            }
+           
             JOptionPane.showMessageDialog(null, "La contraseña se ha cambiado correctamente.");
         
             if(copiaTipoUsuario == 0){
@@ -137,9 +184,12 @@ public class GUICambiarContrasena extends javax.swing.JFrame {
                 GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente(nombreUsuario);
                 menuPresid.setVisible(true);
             }
-        }
+        else{
+            System.out.println ("Error: claves no coinciden");
+            }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         

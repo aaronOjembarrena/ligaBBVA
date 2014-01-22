@@ -10,10 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import ligabbva.EndikaAvellaneda.Identificar.Identificar;
 
-/**
- *
- * @author Aaron
- */
+/** @Author Endika Avellaneda */
 public class GUIinicioSesion extends javax.swing.JFrame {
 
     /**
@@ -147,15 +144,14 @@ public class GUIinicioSesion extends javax.swing.JFrame {
         
         Identificar identificacion = new Identificar();
 
-        int tipoUsuario = 0;
+        int tipoUsuario = 4;
         
         try {
-            tipoUsuario = identificacion.IdentificacionUsuario(jTextField1.getText(), jPasswordField1.getPassword());
-        } catch (SQLException ex) {
-            //Cambiar password
-
-        
-        if(tipoUsuario == 0){
+            
+            String elpass = new String (jPasswordField1.getPassword());
+            
+            tipoUsuario = identificacion.IdentificacionUsuario(jTextField1.getText(), elpass);
+         if(tipoUsuario == 0){
             GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador(jTextField1.getText());
             menuAdmin.setVisible(true);
             
@@ -178,6 +174,13 @@ public class GUIinicioSesion extends javax.swing.JFrame {
                 + "se encuentra en el sistema");
             this.setEnabled(true);
         }
+        
+        
+        } catch (SQLException ex) {
+            //Cambiar password
+
+        System.out.println("Error: "+ex.toString());
+       
         
     }//GEN-LAST:event_jButton1ActionPerformed
 }
