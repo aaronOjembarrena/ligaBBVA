@@ -24,7 +24,7 @@ public class Identificar {
     
     }
     
-    public int IdentificacionUsuario(String nombreUsuario, String claveUsuario) throws SQLException{
+    public int IdentificacionUsuario(String nombreUsuario, char[] password) throws SQLException{
         
         int tipoUsuario = 4;
         
@@ -60,4 +60,5 @@ public class Identificar {
          }
         return 0;
          }
+
 }
