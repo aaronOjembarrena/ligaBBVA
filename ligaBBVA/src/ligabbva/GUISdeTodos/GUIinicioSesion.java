@@ -151,6 +151,7 @@ public class GUIinicioSesion extends javax.swing.JFrame {
         try {
             tipoUsuario = identificacion.IdentificacionUsuario(jTextField1.getText(), jPasswordField1.getText());
         } catch (SQLException ex) {
+            //Cambiar password
             Logger.getLogger(GUIinicioSesion.class.getName()).log(Level.SEVERE, null, ex);
         }
         
