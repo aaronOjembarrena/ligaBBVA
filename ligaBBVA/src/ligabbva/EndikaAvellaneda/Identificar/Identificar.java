@@ -25,7 +25,7 @@ public class Identificar {
     
     public int IdentificacionUsuario(String nombreUsuario, char[] password) throws SQLException{
         
-        int resultado = -1;
+        int resultado = 0;
         
         /*Aquí se comprueba si el usuario corresponde a alguien de la base de datos,
          en el caso de que esté se devuelve el tipo de usuario*/
