@@ -146,14 +146,14 @@ public class GUIinicioSesion extends javax.swing.JFrame {
         this.setEnabled(false);
         
         Identificar identificacion = new Identificar();
-        int tipoUsuario = -1;
+
+        int tipoUsuario = 0;
         
         try {
-            tipoUsuario = identificacion.IdentificacionUsuario(jTextField1.getText(), jPasswordField1.getText());
+            tipoUsuario = identificacion.IdentificacionUsuario(jTextField1.getText(), jPasswordField1.getPassword());
         } catch (SQLException ex) {
             //Cambiar password
-            Logger.getLogger(GUIinicioSesion.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
         
         if(tipoUsuario == 0){
             GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador();
@@ -180,7 +180,7 @@ public class GUIinicioSesion extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
+}
     /**
      * @param args the command line arguments
      */

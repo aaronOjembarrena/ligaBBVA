@@ -23,7 +23,7 @@ public class Identificar {
     
     }
     
-    public int IdentificacionUsuario(String nombreUsuario, String claveUsuario) throws SQLException{
+    public int IdentificacionUsuario(String nombreUsuario, char[] password) throws SQLException{
         
         int resultado = -1;
         
