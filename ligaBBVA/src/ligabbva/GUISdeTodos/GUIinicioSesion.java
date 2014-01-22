@@ -97,9 +97,9 @@ public class GUIinicioSesion extends javax.swing.JFrame {
                                 .addGap(302, 302, 302)
                                 .addComponent(jButton2))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPasswordField1)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE))
                                 .addGap(40, 40, 40)
                                 .addComponent(jButton1)))))
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -156,19 +156,19 @@ public class GUIinicioSesion extends javax.swing.JFrame {
 
         
         if(tipoUsuario == 0){
-            GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador();
+            GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador(jTextField1.getText());
             menuAdmin.setVisible(true);
             
             dispose();
         }
         else if(tipoUsuario == 1){
-            GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro();
+            GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro(jTextField1.getText());
             menuArbi.setVisible(true);
             
             dispose();
         }
         else if(tipoUsuario == 2){
-            GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente();
+            GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente(jTextField1.getText());
             menuPresid.setVisible(true);
             
             dispose();

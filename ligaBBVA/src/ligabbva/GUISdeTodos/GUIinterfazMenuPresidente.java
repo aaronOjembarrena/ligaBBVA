@@ -10,10 +10,13 @@ package ligabbva.GUISdeTodos;
  */
 public class GUIinterfazMenuPresidente extends javax.swing.JFrame {
 
+    String nombreUsuario;
     /**
      * Creates new form GUIinterfazMenuPresidente
      */
-    public GUIinterfazMenuPresidente() {
+    public GUIinterfazMenuPresidente(String nombre) {
+        
+        nombreUsuario = nombre;
         initComponents();
     }
 
@@ -42,6 +45,11 @@ public class GUIinterfazMenuPresidente extends javax.swing.JFrame {
         jButton3.setText("Realizar Convocatoria");
 
         jButton4.setText("Consultar Calendario");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Cambiar Password");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -90,8 +98,15 @@ public class GUIinterfazMenuPresidente extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         dispose();
-        new GUICambiarContrasena(2).setVisible(true);
+        new GUICambiarContrasena(2, nombreUsuario).setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+        new GUIconsultarCalendario(nombreUsuario).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 //    /**
 //     * @param args the command line arguments

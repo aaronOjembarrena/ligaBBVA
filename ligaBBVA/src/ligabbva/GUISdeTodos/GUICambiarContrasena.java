@@ -18,10 +18,12 @@ public class GUICambiarContrasena extends javax.swing.JFrame {
      */
     
     int copiaTipoUsuario;
+    String nombreUsuario;
     
-    public GUICambiarContrasena(int tipoUsuario) {
+    public GUICambiarContrasena(int tipoUsuario, String nombre) {
         initComponents();
         copiaTipoUsuario = tipoUsuario;
+        nombreUsuario = nombre;
     }
 
     /**
@@ -124,15 +126,15 @@ public class GUICambiarContrasena extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "La contraseña se ha cambiado correctamente.");
         
             if(copiaTipoUsuario == 0){
-                GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador();
+                GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador(nombreUsuario);
                 menuAdmin.setVisible(true);
             }
             else if(copiaTipoUsuario == 1){
-                GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro();
+                GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro(nombreUsuario);
                 menuArbi.setVisible(true);
             }
             else if(copiaTipoUsuario == 2){
-                GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente();
+                GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente(nombreUsuario);
                 menuPresid.setVisible(true);
             }
         }
@@ -142,15 +144,15 @@ public class GUICambiarContrasena extends javax.swing.JFrame {
         // TODO add your handling code here:
         
             if(copiaTipoUsuario == 0){
-                GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador();
+                GUIinterfazMenuAdministrador menuAdmin = new GUIinterfazMenuAdministrador(nombreUsuario);
                 menuAdmin.setVisible(true);
             }
             else if(copiaTipoUsuario == 1){
-                GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro();
+                GUIinterfazMenuArbitro menuArbi = new GUIinterfazMenuArbitro(nombreUsuario);
                 menuArbi.setVisible(true);
             }
             else if(copiaTipoUsuario == 2){
-                GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente();
+                GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente(nombreUsuario);
                 menuPresid.setVisible(true);
             }
     }//GEN-LAST:event_jButton2ActionPerformed
