@@ -163,13 +163,8 @@ public class GUICambiarContrasena extends javax.swing.JFrame {
 /**Cerramos la sentencia*/            
             sentencia.close();
 /**Cerramos la conexión a la base de datos*/
-            conexion.close();                    
-                }
-                catch (Exception err) {
-                System.out.println("Error " + err.getMessage());
-         }
-            }
-           
+            conexion.close();
+                       
             JOptionPane.showMessageDialog(null, "La contraseña se ha cambiado correctamente.");
         
             if(copiaTipoUsuario == 0){
@@ -184,8 +179,12 @@ public class GUICambiarContrasena extends javax.swing.JFrame {
                 GUIinterfazMenuPresidente menuPresid = new GUIinterfazMenuPresidente(nombreUsuario);
                 menuPresid.setVisible(true);
             }
+            } catch (Exception err) {
+                System.out.println("Error " + err.getMessage());
+            }
+        }
         else{
-            System.out.println ("Error: claves no coinciden");
+            JOptionPane.showMessageDialog(null, "Las claves no coinciden. Compruebelo de nuevo");
             }
     }//GEN-LAST:event_jButton1ActionPerformed
     }

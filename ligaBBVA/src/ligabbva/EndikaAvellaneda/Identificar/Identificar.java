@@ -15,10 +15,10 @@ import java.sql.Statement;
  * Persona 1 (identificada como árbitro) --> Usuario: pepito@pepito.es
  *                                           Contraseña: 1234
  * 
- * Persona 1 (identificada como árbitro) --> Usuario: pipon@pipon.es
+ * Persona 2 (identificada como presidente) --> Usuario: pipon@pipon.es
  *                                           Contraseña: 1234
  * 
- * Persona 1 (identificada como árbitro) --> Usuario: popon@popon.es
+ * Persona 3 (identificada como administrador) --> Usuario: popon@popon.es
  *                                           Contraseña: 1234
  * 
  * (Ya sabemos que las contraseñas no son nada seguras, XD)
