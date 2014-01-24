@@ -4,6 +4,9 @@
  */
 package ligabbva.GUISdeTodos;
 
+import ligabbva.UnaiMartin.GestionarArbitros.GestionArbitros;
+import ligabbva.UnaiMartin.GestionarEquipos.GestionEquipos;
+
 /**
  *
  * @author Aaron
@@ -38,10 +41,20 @@ public class GUIinterfazMenuAdministrador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Gestionar árbitro");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Gestionar temporada");
 
         jButton3.setText("Gestionar equipos");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Cambiar password");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +100,20 @@ public class GUIinterfazMenuAdministrador extends javax.swing.JFrame {
         this.setEnabled(false);
         new GUICambiarContrasena(0, nombreUsuario).setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        GestionArbitros gArbitros = new GestionArbitros();
+        gArbitros.inicializarGUIgestionArbitros();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+        GestionEquipos gEquipos = new GestionEquipos();
+        gEquipos.inicializarGUIgestionEquipos();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 //    /**
 //     * @param args the command line arguments
