@@ -6,6 +6,8 @@
 
 package ligabbva.UnaiMartin.GestionarEquipos;
 
+import ligabbva.GUISdeTodos.GUIgestionEquipos;
+
 /**
  *
  * @author Unai
@@ -19,6 +21,8 @@ public class GestionEquipos {
     
     public void inicializarGUIgestionEquipos(){
         
+        GUIgestionEquipos gEquipos = new GUIgestionEquipos();
+        gEquipos.setVisible(true);
         
     }
     

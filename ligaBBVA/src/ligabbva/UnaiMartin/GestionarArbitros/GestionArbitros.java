@@ -6,6 +6,8 @@
 
 package ligabbva.UnaiMartin.GestionarArbitros;
 
+import ligabbva.GUISdeTodos.GUIgestionArbitros;
+
 /**
  *
  * @author Unai
@@ -19,6 +21,8 @@ public class GestionArbitros {
     
     public void inicializarGUIgestionArbitros(){
         
+        GUIgestionArbitros gArbitros = new GUIgestionArbitros();
+        gArbitros.setVisible(true);
         
     }
     
